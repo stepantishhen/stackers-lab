@@ -1,5 +1,7 @@
 class Raspberry
   @@states = ["Отсутствует", "Цветение", "Зелёная", "Красная"]
+
+  protected
   def initialize(index)
     @index = index
     @state = @@states.first
@@ -9,6 +11,7 @@ class Raspberry
     @@states
   end
 
+  public
   def grow!
     @state = @@states[@@states.index(@state) + 1] unless ripe?
   end
@@ -59,7 +62,7 @@ class Human
   end
 
   def self.knowledge_base
-    puts "Совет по садоводству: Малину лучше всего сажать в начале весны или в конце осени."
+    puts "Совет: Малину лучше всего сажать в начале весны или в конце осени."
   end
 end
 
